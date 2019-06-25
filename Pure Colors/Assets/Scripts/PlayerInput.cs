@@ -6,14 +6,13 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private string horizontalAxis = "Horizontal";
     [SerializeField] private string verticalAxis = "Vertical";
-    public string shootButton = "Mouse1";
-    public string slashButton = "Mouse2";
+    public string shootButton = "Fire1";
+    public string slashButton = "Fire2";
     public string dashButton = "Dash";
     public string slowDownButton = "Slowdown";
 
     //A vector representing the 2D direction in which
     internal Vector2 inputVector = new Vector2();
-    public Vector2 cursorPosition;
     private Camera maincam;
     
     private void Start()
@@ -31,5 +30,14 @@ public class PlayerInput : MonoBehaviour
     public Vector2 GetCursorPosition()
     {
         return maincam.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    public Vector2 GetAimDirection(Vector2 playerPos, Vector2 cursorPosition)
+    {
+        var aimvec = new Vector2();
+        aimvec = cursorPosition - playerPos;
+        aimvec = Vector3.Normalize(aimvec);
+
+        return aimvec;
     }
 }

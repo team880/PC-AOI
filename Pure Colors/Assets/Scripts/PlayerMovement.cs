@@ -23,6 +23,12 @@ public class PlayerMovement : MonoBehaviour
     {
        GetComponents();
     }
+
+    private void Update()
+    {
+        //print(_input.GetAimDirection(transform.position, _input.GetCursorPosition()));
+    }
+
     private void FixedUpdate()
     {
         MovePlayer(_input.inputVector, Input.GetButton(_input.slowDownButton));
