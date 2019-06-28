@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    [Header("Shooting")]
+    [Header("Shooting")] //random comment
     public GameObject projectile;
     public float shootSpeed = 0.1f; //time between projectiles
     [Header("Slashing")]
