@@ -1,2 +1,3 @@
 # Makes github not freak out when pushing/pulling between mac and windows
 * text=auto
+* text eol=lf
